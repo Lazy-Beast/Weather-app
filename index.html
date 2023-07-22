@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <title>The weather</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="app">
+      <div class="app__body">
+
+        <div class="app__input">
+          <input class="input" type="text" placeholder="Enter your location">
+          <button>
+            <img class="submit" src="./search.svg" alt="Search">
+          </button>
+        </div>
+
+        <div class="app__main">
+
+          <div class="app__forecast">
+            <div class="content">
+              <div class="about">
+                <h1 class="location">Location</h1>
+                <h1 class="time">Time</h1>
+              </div>
+              <div class="image">
+                <img src="./img/Overcast (1).png" alt="">
+              </div>
+              <div class="main-info">
+                <h1 class="temp">34°C</h1>
+                <h2 class="weather">Cloudy</h2>
+              </div>
+  
+              <div class="secondary-info">
+                <h3 class="humidity">Humidity: 60%</h3>
+                <h3 class="wind">Wind: 192km/s</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="app__undefined">
+            <div class="content">
+              <img src="./404.png" alt="">
+              <h2 class="warning">Sorry, your location doesn't match :/</h2>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

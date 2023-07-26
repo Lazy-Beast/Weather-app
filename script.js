@@ -43,60 +43,73 @@ const search = function() {
         block.style.scale = '60%';
       });
 
-      loc.innerText = data.location.name;
-      time.innerText = data.location.localtime.split(' ')[1];
-      temp.innerText = `${data.current.temp_c}°C`;
-      weather.innerText = data.current.condition.text;
-      humidity.innerText = `Humidity: ${data.current.humidity}%`;
-      wind.innerText = `Wind: ${data.current.wind_kph}km/h`
+      let dataLoc = data.location.name;
+      let dataTime = data.location.localtime.split(' ')[1];
+      let dataTemp = `${data.current.temp_c}°C`;
+      let dataCondition = data.current.condition.text;
+      let dataHumidity = `Humidity: ${data.current.humidity}%`;
+      let dataWind = `Wind: ${data.current.wind_kph}km/h`;
 
-      if (data.current.is_day === 0) {
-        switch (data.current.condition.text) {
-          case 'Partly cloudy':
-            image.src = './img/Partly Cloudy (1).png'
-            break;
-          case 'Cloudy':
-            image.src = './img/Cloudy (1).png';
-            break
-          case 'Overcast':
-            image.src = './img/Overcast (1).png';
-            break
-          case 'Light rain shower':
-            image.src = './img/Light rain (1).png';
-            break
-          case 'Patchy light rain':
-            image.src = './img/Light rain (1).png';
-            break
-          case 'Partly cloudy':
-            image.src = './img/Partly Cloudy (1).png';
-            break
-          default: image.src = './img/Clear.png';
-            break;
+
+      
+      setTimeout(() => {
+        loc.innerText = dataLoc;
+        time.innerText = dataTime;
+        temp.innerText = dataTemp;
+        weather.innerText = dataCondition;
+        humidity.innerText = dataHumidity;
+        wind.innerText = dataWind;
+
+
+        if (data.current.is_day === 0) {
+          switch (data.current.condition.text) {
+            case 'Partly cloudy':
+              image.src = './img/Partly Cloudy (1).png'
+              break;
+            case 'Cloudy':
+              image.src = './img/Cloudy (1).png';
+              break
+            case 'Overcast':
+              image.src = './img/Overcast (1).png';
+              break
+            case 'Light rain shower':
+              image.src = './img/Light rain (1).png';
+              break
+            case 'Patchy light rain':
+              image.src = './img/Light rain (1).png';
+              break
+            case 'Partly cloudy':
+              image.src = './img/Partly Cloudy (1).png';
+              break
+            default: image.src = './img/Clear.png';
+              break;
+          }
+        } else {
+          switch (data.current.condition.text) {
+            case 'Partly cloudy':
+              image.src = './img/Partly Cloudy.png'
+              break;
+            case 'Cloudy':
+              image.src = './img/Cloudy.png';
+              break
+            case 'Overcast':
+              image.src = './img/Overcast.png';
+              break
+            case 'Light rain shower':
+              image.src = './img/Light rain.png';
+              break
+            case 'Patchy light rain':
+              image.src = './img/Light rain.png';
+              break
+            case 'Partly cloudy':
+              image.src = './img/Partly Cloudy.png';
+              break
+            default: image.src = './img/Sunny.png';
+              break;
+          }
         }
-      } else {
-        switch (data.current.condition.text) {
-          case 'Partly cloudy':
-            image.src = './img/Partly Cloudy.png'
-            break;
-          case 'Cloudy':
-            image.src = './img/Cloudy.png';
-            break
-          case 'Overcast':
-            image.src = './img/Overcast.png';
-            break
-          case 'Light rain shower':
-            image.src = './img/Light rain.png';
-            break
-          case 'Patchy light rain':
-            image.src = './img/Light rain.png';
-            break
-          case 'Partly cloudy':
-            image.src = './img/Partly Cloudy.png';
-            break
-          default: image.src = './img/Sunny.png';
-            break;
-        }
-      }
+      }, 850)
+      
 
       setTimeout(() => {
         content.forEach(block => {
